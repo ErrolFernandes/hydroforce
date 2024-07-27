@@ -287,6 +287,87 @@
             a {
                 color: white;
             }
+
+            @media only screen and (max-width: 600px) {
+                body {
+                    width: 360px;
+                    overflow-x: hidden;
+                }
+                .headline > h1 {
+                    font-size: 30px;
+                }
+
+                .hero {
+                    height: 800px;
+                    justify-content: space-around;
+                }
+                #jitter-data {
+                    scale: 0.6;
+                }
+                .sub-head {
+                    font-size: 16px;
+                }
+
+                .services {
+                    height: 100%;
+                    border: 1px solid #ebebeb;
+                }
+
+                .service-content {
+                    width: 100%;
+                }
+
+                .service-content > h6 {
+                    font-size: 24px;
+                    text-align: center;
+                    width: 80%;
+                }
+                .slideshow {
+                    display: none;
+                }
+                .product {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    margin: 0 6px 30px 6px;
+                }
+
+                .product-img-1 {
+                    display: none;
+                }
+                .product-img-2 {
+                    display: none;
+                }
+                .product-img-3 {
+                    display: none;
+                }
+
+                .product-content > h5 {
+                    text-align: center;
+                }
+                .quicklinks {
+                    display: none;
+                }
+
+                .contacts {
+                    margin: 0;
+                }
+                .headline > h1 {
+                    font-size: 32px;
+                }
+                .contact-card {
+                    width: unset;
+                }
+                .footer {
+                    margin: 0 -26%;
+                }
+                .copy {
+                    margin: 0 -26%;
+                    font-size: 12px;
+                    padding: 0px 26%;
+                    text-align: justify;
+                }
+            }
         </style>
     </head>
     <body>
@@ -320,21 +401,21 @@
             </div>
         </div>
         <div class="hero">
-            <div id="jitter-data"></div>
+            <div id="jitter-data">
+                <script
+                    src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                    type="module"
+                ></script>
 
-            <script
-                src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                type="module"
-            ></script>
-
-            <dotlottie-player
-                src="https://lottie.host/80e9ac92-a609-47c0-a42b-103fba7a3fb0/Ac63Si5cdE.json"
-                background="transparent"
-                speed="1"
-                style="width: 900px; height: 300px"
-                loop
-                autoplay
-            ></dotlottie-player>
+                <dotlottie-player
+                    src="https://lottie.host/80e9ac92-a609-47c0-a42b-103fba7a3fb0/Ac63Si5cdE.json"
+                    background="transparent"
+                    speed="1"
+                    style="width: 900px; height: 300px"
+                    loop
+                    autoplay
+                ></dotlottie-player>
+            </div>
             <div class="headline">
                 <h1>Your Trusted Partner for</h1>
                 <h1>Hydraulic Equipment Sales & Service</h1>
