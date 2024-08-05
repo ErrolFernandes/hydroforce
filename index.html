@@ -1,592 +1,607 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>HydroForce Business Solutions</title>
-        <link rel="icon" type="image/png" href="favicon.png" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            html {
-                background-color: #f7f7f7;
-                background-image: linear-gradient(
-                        to right,
-                        #fff 2px,
-                        transparent 1px
-                    ),
-                    linear-gradient(to bottom, #fff 2px, transparent 1px);
-                background-size: 4rem 4rem;
-                background-position: center center;
-            }
-            body {
-                width: 1280px;
-                margin: auto;
-                font-family: Inter;
-            }
-            nav {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                position: fixed;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HydroForce Business Solutions</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        background-color: #f7f7f7;
+        background-image: linear-gradient(to right, #fff 2px, transparent 1px),
+          linear-gradient(to bottom, #fff 2px, transparent 1px);
+        background-size: 4rem 4rem;
+        background-position: center center;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .dot-ply {
+        width: 900px;
+        height: 300px;
+      }
+      .fil_cont {
+        width: 1280px;
+        margin: auto;
+        font-family: Inter;
+      }
+      nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: fixed;
+      }
 
-            .nav-link {
-                display: flex;
-                align-items: center;
-            }
-            .nav-link > h3 {
-                padding: 10px 30px;
-                font-size: 16px;
-                font-weight: 500;
-                border-radius: 12px;
-            }
-            .abt {
-                margin-left: 270%;
-                margin-right: 20px;
-            }
-            .abt:hover {
-                background-color: #d6d6d6;
-            }
+      .nav-link {
+        display: flex;
+        align-items: center;
+      }
+      .nav-link > h3 {
+        padding: 10px 30px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 12px;
+      }
+      .abt {
+        margin-left: 270%;
+        margin-right: 20px;
+      }
+      .abt:hover {
+        background-color: #d6d6d6;
+      }
 
-            .about-content {
-                display: flex;
-                background-color: white;
-                align-items: center;
-                flex-direction: column;
-                width: 700px;
-                border-radius: 20px;
-                font-size: 18px;
-                line-height: 30px;
-                padding: 80px 40px;
-                position: absolute;
-                text-align: justify;
-                border: 1px solid #f5f4f4;
-            }
-            .about-content > p {
-                margin-top: 100px;
-            }
-            .about {
-                position: fixed;
-                visibility: hidden;
-                margin-top: 300px;
-                margin-left: 16%;
-                z-index: 20;
-            }
-            .close {
-                background-color: white;
-                border: 2px solid black;
-                margin-left: 780px;
-                padding: 10px;
-                border-radius: 10px;
-            }
-            .cta {
-                background-color: black;
-                color: white;
+      .about-content {
+        display: flex;
+        background-color: white;
+        align-items: center;
+        flex-direction: column;
+        width: 700px;
+        border-radius: 20px;
+        font-size: 18px;
+        line-height: 30px;
+        padding: 80px 40px;
+        position: absolute;
+        text-align: justify;
+        border: 1px solid #f5f4f4;
+      }
+      .about-content > p {
+        margin-top: 100px;
+      }
+      .about {
+        position: fixed;
+        visibility: hidden;
+        margin-top: 300px;
+        margin-left: 16%;
+        z-index: 20;
+      }
+      .close {
+        background-color: white;
+        border: 2px solid black;
+        margin-left: 780px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .cta {
+        background-color: black;
+        color: white;
 
-                border: 4px solid #fff;
-            }
-            .cta:hover {
-                border: 4px solid #d6d6d6;
-                /* background-clip: padding-box; */
-            }
-            .hero {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                /* height: 800px; */
-            }
+        border: 4px solid #fff;
+      }
+      .cta:hover {
+        border: 4px solid #d6d6d6;
+        /* background-clip: padding-box; */
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* height: 800px; */
+      }
 
-            #jitter-data {
-                margin-top: 120px;
-            }
-            .headline > h1 {
-                max-width: 994px;
-                font-size: 56px;
-                text-align: center;
-                margin: 0%;
-            }
-            .sub-head {
-                font-weight: 400;
-                font-size: 16px;
-            }
-            .button {
-                background: black;
-                color: white;
-                margin-top: 30px;
-                width: 209px;
-                height: 52px;
-                font-size: 24px;
-                position: relative;
-                transform-style: preserve-3d;
-                border-radius: 10px;
-            }
-            .button::before {
-                content: "";
-                position: absolute;
-                background: linear-gradient(
-                    to right,
-                    #bcfbff,
-                    #bfb9ff,
-                    #f0b6ff,
-                    #ffb2b2
-                );
-                filter: blur(9px);
-                transform: translate3d(0px, 0px, -1px);
-                border-radius: inherit;
-                pointer-events: none;
-                inset: -6px;
-            }
+      #jitter-data {
+        margin-top: 120px;
+      }
+      .headline > h1 {
+        max-width: 994px;
+        font-size: 56px;
+        text-align: center;
+        margin: 0%;
+      }
+      .sub-head {
+        font-weight: 400;
+        font-size: 16px;
+      }
+      .button {
+        background: black;
+        color: white;
+        margin-top: 30px;
+        width: 209px;
+        height: 52px;
+        font-size: 24px;
+        position: relative;
+        transform-style: preserve-3d;
+        border-radius: 10px;
+      }
+      .button::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(
+          to right,
+          #bcfbff,
+          #bfb9ff,
+          #f0b6ff,
+          #ffb2b2
+        );
+        filter: blur(9px);
+        transform: translate3d(0px, 0px, -1px);
+        border-radius: inherit;
+        pointer-events: none;
+        inset: -6px;
+      }
 
-            .button:hover {
-                background-color: white;
-                color: black;
-                /* border: 4px solid white; */
-            }
+      .button:hover {
+        background-color: white;
+        color: black;
+        /* border: 4px solid white; */
+      }
 
-            .services {
-                height: 800px;
-                margin-top: 100px;
-                background-color: white;
-                border-radius: 22px;
-                display: flex;
-                flex-direction: row;
-            }
+      .services {
+        height: 800px;
+        margin-top: 100px;
+        background-color: white;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: row;
+      }
 
-            .slideshow {
-                float: right;
-                max-width: 46.8%;
-                /* margin-left: 30px; */
-            }
-            .mySlides {
-                border-radius: 0 20px 20px 0;
-            }
-            .service-content {
-                margin: 10% 40px;
-                width: 51%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: justify;
-            }
+      .slideshow {
+        float: right;
+        max-width: 46.8%;
+        /* margin-left: 30px; */
+      }
+      .mySlides {
+        border-radius: 0 20px 20px 0;
+      }
+      .service-content {
+        margin: 10% 40px;
+        width: 51%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+      }
 
-            .service-content > h3 {
-                font-size: 42px;
-            }
-            .service-content > h6 {
-                font-size: 24px;
-            }
-            .service-content > p {
-                font-size: 18px;
-                line-height: 32px;
-            }
+      .service-content > h3 {
+        font-size: 42px;
+      }
+      .service-content > h6 {
+        font-size: 24px;
+      }
+      .service-content > p {
+        font-size: 18px;
+        line-height: 32px;
+      }
 
-            .products {
-                background-color: #f7f7f7;
-            }
-            .products > h3 {
-                display: flex;
-                justify-content: center;
-                margin-top: 100px;
-                font-size: 42px;
-            }
+      .products {
+        background-color: #f7f7f7;
+      }
+      .products > h3 {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        font-size: 42px;
+      }
 
-            .product {
-                display: flex;
-                flex-direction: row;
-                height: 500px;
-                margin: 20px 50px;
-                background-color: #fbfbfb;
-                border-radius: 20px;
-                border: 1px solid #ebebeb;
-            }
+      .product {
+        display: flex;
+        flex-direction: row;
+        height: 500px;
+        margin: 20px 50px;
+        background-color: #fbfbfb;
+        border-radius: 20px;
+        border: 1px solid #ebebeb;
+      }
 
-            .product-content {
-                margin: 20px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: justify;
-            }
+      .product-content {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+      }
 
-            .product-content > h5 {
-                font-size: 24px;
-            }
+      .product-content > h5 {
+        font-size: 24px;
+      }
 
-            .product-content > p {
-                font-size: 18px;
-                line-height: 32px;
-            }
+      .product-content > p {
+        font-size: 18px;
+        line-height: 32px;
+      }
 
-            .product:nth-child(3) {
-                display: flex;
-                flex-direction: row-reverse;
-            }
+      .product:nth-child(3) {
+        display: flex;
+        flex-direction: row-reverse;
+      }
 
-            .footer {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
-                height: 800px;
-                color: #fff;
-                background-color: black;
-            }
+      .footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        height: 800px;
+        color: #fff;
+        background-color: black;
+      }
 
-            .quicklinks {
-                text-align: center;
-                margin-left: 30px;
-            }
-            li {
-                text-decoration: underline;
-                font-size: 14px;
-                line-height: 24px;
-            }
-            .contacts {
-                float: right;
-                margin: 100px;
-            }
+      .quicklinks {
+        text-align: center;
+        margin-left: 30px;
+      }
+      li {
+        text-decoration: underline;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .contacts {
+        float: right;
+        margin: 100px;
+      }
 
-            .contact-card {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                width: 363px;
-                margin: 20px;
-                border-radius: 20px;
-                padding: 20px 20px;
-                background-color: #0f0f0f;
-                border: 1px solid #565656;
-                box-shadow: inset #777676 0px 0px 50px -20px;
-            }
+      .contact-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 363px;
+        margin: 20px;
+        border-radius: 20px;
+        padding: 20px 20px;
+        background-color: #0f0f0f;
+        border: 1px solid #565656;
+        box-shadow: inset #777676 0px 0px 50px -20px;
+      }
 
-            .contact-card > img {
-                padding: 20px;
-            }
+      .contact-card > img {
+        padding: 20px;
+      }
 
-            .info > h6 {
-                font-size: 14px;
-                /* margin: 30px 0 0 0; */
-                margin: 0;
-            }
-            .info > p {
-                font-size: 12px;
-                width: 177px;
-            }
+      .info > h6 {
+        font-size: 14px;
+        /* margin: 30px 0 0 0; */
+        margin: 0;
+      }
+      .info > p {
+        font-size: 12px;
+        width: 177px;
+      }
 
-            .copy {
-                background: black;
-                color: white;
-                display: flex;
-                justify-content: center;
-                padding: 30px;
-            }
-            a {
-                color: white;
-            }
+      .copy {
+        background: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+      }
+      a {
+        color: white;
+      }
 
-            @media only screen and (max-width: 600px) {
-                html {
-                    overflow-x: hidden;
-                }
-                body {
-                    width: 360px;
-                    overflow-x: hidden;
-                }
-                .headline > h1 {
-                    font-size: 30px;
-                }
+      .ftr {
+        margin: auto;
+      }
 
-                .hero {
-                    height: 800px;
-                    justify-content: space-around;
-                    overflow-x: hidden;
-                }
-                #jitter-data {
-                    scale: 0.6;
-                    overflow-x: hidden;
-                }
-                .sub-head {
-                    font-size: 16px;
-                }
+      @media only screen and (max-width: 600px) {
+        .fil_cont {
+          width: 380px;
+          overflow-x: hidden;
+        }
+        body {
+          margin: 0px;
+          box-sizing: border-box;
+        }
 
-                .services {
-                    height: 100%;
-                    border: 1px solid #ebebeb;
-                }
+        .headline > h1 {
+          font-size: 30px;
+        }
 
-                .service-content {
-                    width: 100%;
-                }
+        .hero {
+          height: 800px;
+          justify-content: space-around;
+        }
+        #jitter-data {
+          scale: 0.6;
+        }
+        .sub-head {
+          font-size: 16px;
+        }
 
-                .service-content > h6 {
-                    font-size: 24px;
-                    text-align: center;
-                    width: 80%;
-                }
-                .slideshow {
-                    display: none;
-                }
-                .product {
-                    display: flex;
-                    flex-direction: column;
-                    height: 100%;
-                    margin: 0 6px 30px 6px;
-                }
+        .services {
+          height: 100%;
+          border: 1px solid #ebebeb;
+        }
 
-                .product-img-1 {
-                    display: none;
-                }
-                .product-img-2 {
-                    display: none;
-                }
-                .product-img-3 {
-                    display: none;
-                }
+        .service-content {
+          width: 100%;
+        }
 
-                .product-content > h5 {
-                    text-align: center;
-                }
-                .quicklinks {
-                    display: none;
-                }
+        .service-content > h6 {
+          font-size: 24px;
+          text-align: center;
+          width: 80%;
+        }
+        .slideshow {
+          display: none;
+        }
+        .product {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          margin: 0 6px 30px 6px;
+        }
 
-                .contacts {
-                    margin: 0;
-                }
-                .headline > h1 {
-                    font-size: 32px;
-                }
-                .contact-card {
-                    width: unset;
-                }
-                .footer {
-                    margin: 0 -26%;
-                }
-                .copy {
-                    margin: 0 -26%;
-                    font-size: 12px;
-                    padding: 0px 26%;
-                    text-align: justify;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <nav>
-            <img src="image 8.svg" />
-            <div class="nav-link">
-                <h3 class="abt" onclick="change();">About</h3>
+        .product-img-1 {
+          display: none;
+        }
+        .product-img-2 {
+          display: none;
+        }
+        .product-img-3 {
+          display: none;
+        }
 
-                <h3 class="cta">
-                    <a href="mailto:sales@hydroforcebs.com">Contact</a>
-                </h3>
-            </div>
-        </nav>
+        .product-content > h5 {
+          text-align: center;
+        }
+        .quicklinks {
+          display: none;
+        }
 
-        <div id="d" class="about">
-            <h3 class="close" onclick="changeback();">X</h3>
-            <div class="about-content">
-                <img src="image 8.svg" />
-                <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hydroforce
-                    Business Solutions is a leading provider of high-quality
-                    hydraulic products, expert repair services, and reliable
-                    equipment supply for a wide range of industries, with a
-                    commitment to customer satisfaction.  We are your one-stop
-                    shop for all your hydraulic needs, providing comprehensive
-                    solutions tailored to your specific requirements. From
-                    design and manufacturing to supply, installation and
-                    maintenance, we offer a full range of hydraulic services to
-                    keep your operations running smoothly.
-                </p>
-            </div>
+        .contacts {
+          margin: 0;
+        }
+        .headline > h1 {
+          font-size: 32px;
+        }
+        .contact-card {
+          width: unset;
+        }
+        footer {
+          width: 100%;
+          /* position: absolute; */
+        }
+        .copy {
+          margin: 0;
+          font-size: 12px;
+          padding: 0px;
+          text-align: justify;
+        }
+        .dot-ply {
+          width: 700px;
+          height: 300px;
+        }
+        /* .ftr {
+          position: absolute;
+          width: 102%;
+          left: 0px;
+          right: -1px;
+        } */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fil_cont">
+      <nav>
+        <img src="image 8.svg" />
+        <div class="nav-link">
+          <h3 class="abt" onclick="change();">About</h3>
+
+          <h3 class="cta">
+            <a href="mailto:sales@hydroforcebs.com">Contact</a>
+          </h3>
         </div>
-        <div class="hero">
-            <div id="jitter-data">
-                <script
-                    src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                    type="module"
-                ></script>
+      </nav>
 
-                <dotlottie-player
-                    src="https://lottie.host/80e9ac92-a609-47c0-a42b-103fba7a3fb0/Ac63Si5cdE.json"
-                    background="transparent"
-                    speed="1"
-                    style="width: 900px; height: 300px"
-                    loop
-                    autoplay
-                ></dotlottie-player>
-            </div>
-            <div class="headline">
-                <h1>Your Trusted Partner for</h1>
-                <h1>Hydraulic Equipment Sales & Service</h1>
-            </div>
-            <h6 class="sub-head">
-                "Expert Solutions for All Your Hydraulic Needs, from Sales to
-                Service"
-            </h6>
-            <a href="mailto:sales@hydroforcebs.com">
-                <button class="button">Contact Sales</button></a
-            >
+      <div id="d" class="about">
+        <h3 class="close" onclick="changeback();">X</h3>
+        <div class="about-content">
+          <img src="image 8.svg" />
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hydroforce
+            Business Solutions is a leading provider of high-quality hydraulic
+            products, expert repair services, and reliable equipment supply for
+            a wide range of industries, with a commitment to customer
+            satisfaction.  We are your one-stop shop for all your hydraulic
+            needs, providing comprehensive solutions tailored to your specific
+            requirements. From design and manufacturing to supply, installation
+            and maintenance, we offer a full range of hydraulic services to keep
+            your operations running smoothly.
+          </p>
         </div>
-        <div id="Services"></div>
-        <div class="services">
-            <div class="service-content">
-                <h3>Our Services</h3>
-                <h6>Precision Service & Repair Workshop</h6>
-                <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Step into our
-                    state-of-the-art workshop where we specialize in the
-                    meticulous service and repair of hydraulic equipment, parts,
-                    and components. Whether your system needs maintenance,
-                    troubleshooting, or a complete overhaul, our expert
-                    technicians are dedicated to restoring your hydraulic
-                    machinery to peak performance. Trust us to keep your
-                    operations running smoothly and efficiently with our
-                    unrivaled expertise in all things hydraulic.
-                </p>
-            </div>
-            <div class="slideshow">
-                <img class="mySlides" src="image 1.png" style="width: 100%" />
-                <img class="mySlides" src="image 2.png" style="width: 100%" />
-                <img class="mySlides" src="image 3.png" style="width: 100%" />
-            </div>
+      </div>
+      <div class="hero">
+        <div id="jitter-data">
+          <script
+            src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+            type="module"
+          ></script>
 
-            <script>
-                var myIndex = 0;
-                carousel();
+          <dotlottie-player
+            src="https://lottie.host/80e9ac92-a609-47c0-a42b-103fba7a3fb0/Ac63Si5cdE.json"
+            background="transparent"
+            speed="1"
+            class="dot-ply"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+        <div class="headline">
+          <h1>Your Trusted Partner for</h1>
+          <h1>Hydraulic Equipment Sales & Service</h1>
+        </div>
+        <h6 class="sub-head">
+          "Expert Solutions for All Your Hydraulic Needs, from Sales to Service"
+        </h6>
+        <a href="mailto:sales@hydroforcebs.com">
+          <button class="button">Contact Sales</button></a
+        >
+      </div>
+      <div id="Services"></div>
+      <div class="services">
+        <div class="service-content">
+          <h3>Our Services</h3>
+          <h6>Precision Service & Repair Workshop</h6>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Step into our state-of-the-art
+            workshop where we specialize in the meticulous service and repair of
+            hydraulic equipment, parts, and components. Whether your system
+            needs maintenance, troubleshooting, or a complete overhaul, our
+            expert technicians are dedicated to restoring your hydraulic
+            machinery to peak performance. Trust us to keep your operations
+            running smoothly and efficiently with our unrivaled expertise in all
+            things hydraulic.
+          </p>
+        </div>
+        <div class="slideshow">
+          <img class="mySlides" src="image 1.png" style="width: 100%" />
+          <img class="mySlides" src="image 2.png" style="width: 100%" />
+          <img class="mySlides" src="image 3.png" style="width: 100%" />
+        </div>
 
-                function carousel() {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
-                    myIndex++;
-                    if (myIndex > x.length) {
-                        myIndex = 1;
-                    }
-                    x[myIndex - 1].style.display = "block";
-                    setTimeout(carousel, 4000); // Change image every 2 seconds
-                }
-                function change() {
-                    document.getElementById("d").style.visibility = "visible";
-                }
-                function changeback() {
-                    document.getElementById("d").style.visibility = "hidden";
-                }
-            </script>
+        <script>
+          var myIndex = 0;
+          carousel();
+
+          function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+              myIndex = 1;
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 4000); // Change image every 2 seconds
+          }
+          function change() {
+            document.getElementById("d").style.visibility = "visible";
+          }
+          function changeback() {
+            document.getElementById("d").style.visibility = "hidden";
+          }
+        </script>
+      </div>
+      <div id="Products"></div>
+      <div class="products">
+        <h3>Our Products</h3>
+        <div class="product">
+          <div class="product-content">
+            <h5>Hydraulic components</h5>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We offer a complete range of
+              hydraulic products, including power take-offs, pumps, cylinders,
+              tipping cylinders, all kinds of hydraulic valves, hoses and
+              fittings, filters, oil coolers, tipping valves, tipping switches,
+              DC & AC powerpacks, oil tanks and accessories sourced from top
+              manufacturers in the industry.
+            </p>
+          </div>
+          <div class="product-img-1">
+            <img src="hydralic.png" height="500" width="600" />
+          </div>
         </div>
-        <div id="Products"></div>
-        <div class="products">
-            <h3>Our Products</h3>
-            <div class="product">
-                <div class="product-content">
-                    <h5>Hydraulic components</h5>
-                    <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We offer a complete
-                        range of hydraulic products, including power take-offs,
-                        pumps, cylinders, tipping cylinders, all kinds of
-                        hydraulic valves, hoses and fittings, filters, oil
-                        coolers, tipping valves, tipping switches, DC & AC
-                        powerpacks, oil tanks and accessories sourced from top
-                        manufacturers in the industry.
-                    </p>
-                </div>
-                <div class="product-img-1">
-                    <img src="hydralic.png" height="500" width="600" />
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-content">
-                    <h5>Tailor made seals</h5>
-                    <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specializing in
-                        custom-designed hydraulic seals, we provide tailored
-                        solutions to meet your unique sealing requirements with
-                        precision and reliability.
-                    </p>
-                </div>
-                <div class="product-img-2">
-                    <img src="Seals.png" height="500" width="600" />
-                </div>
-            </div>
-            <div class="product">
-                <div class="product-content">
-                    <h5>Truck mounted Hydraulic Equipment</h5>
-                    <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We specialize in
-                        providing a wide range of high-quality hydraulic
-                        equipment, including knuckle boom cranes, winches, tail
-                        lift loaders, compactors, aerial lift platforms, Tipping
-                        cylinders and custom-made power packs.
-                    </p>
-                </div>
-                <div class="product-img-3">
-                    <img src="Truck.png" height="500" width="600" />
-                </div>
-            </div>
+        <div class="product">
+          <div class="product-content">
+            <h5>Tailor made seals</h5>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specializing in
+              custom-designed hydraulic seals, we provide tailored solutions to
+              meet your unique sealing requirements with precision and
+              reliability.
+            </p>
+          </div>
+          <div class="product-img-2">
+            <img src="Seals.png" height="500" width="600" />
+          </div>
         </div>
+        <div class="product">
+          <div class="product-content">
+            <h5>Truck mounted Hydraulic Equipment</h5>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We specialize in providing a
+              wide range of high-quality hydraulic equipment, including knuckle
+              boom cranes, winches, tail lift loaders, compactors, aerial lift
+              platforms, Tipping cylinders and custom-made power packs.
+            </p>
+          </div>
+          <div class="product-img-3">
+            <img src="Truck.png" height="500" width="600" />
+          </div>
+        </div>
+      </div>
+
+      <div class="ftr">
         <footer class="footer">
-            <div class="quicklinks">
-                <ul style="list-style-type: none">
-                    <h5>Quick-Links</h5>
-                    <li onclick="change();">About</li>
-                    <li><a href="#Services"> Services</a></li>
-                    <li><a href="#Products">Products</a></li>
-                    <li><a href="#Contact">Contact</a></li>
-                </ul>
+          <div class="quicklinks">
+            <ul style="list-style-type: none">
+              <h5>Quick-Links</h5>
+              <li onclick="change();">About</li>
+              <li><a href="#Services"> Services</a></li>
+              <li><a href="#Products">Products</a></li>
+              <li><a href="#Contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="contacts">
+            <div class="contact-card">
+              <img src="location.svg" />
+              <div class="info">
+                <h6>Address</h6>
+                <p>
+                  North Misfah Industrial Area, Way no: 8135, Muscat, Sultanate
+                  of Oman
+                </p>
+              </div>
             </div>
-            <div class="contacts">
-                <div class="contact-card">
-                    <img src="location.svg" />
-                    <div class="info">
-                        <h6>Address</h6>
-                        <p>
-                            North Misfah Industrial Area, Way no: 8135, Muscat,
-                            Sultanate of Oman
-                        </p>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <img src="contact.svg" />
-                    <div class="info">
-                        <h6>Phone</h6>
-                        <p><a href="tel:+96894612322"> +968 94612322</a></p>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <img src="website.svg" />
-                    <div class="info">
-                        <h6>Website</h6>
+            <div class="contact-card">
+              <img src="contact.svg" />
+              <div class="info">
+                <h6>Phone</h6>
+                <p><a href="tel:+96894612322"> +968 94612322</a></p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <img src="website.svg" />
+              <div class="info">
+                <h6>Website</h6>
 
-                        <p>
-                            <a href="www.hydroforcebs.com"
-                                >www.hydroforcebs.com</a
-                            >
-                        </p>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <img src="mail.svg" />
-                    <div class="info">
-                        <h6>Email</h6>
-                        <p>
-                            <a href="mailto:sales@hydroforcebs.com"
-                                >sales@hydroforcebs.com</a
-                            >
-                        </p>
-                    </div>
-                </div>
+                <p>
+                  <a href="www.hydroforcebs.com">www.hydroforcebs.com</a>
+                </p>
+              </div>
             </div>
+            <div class="contact-card">
+              <img src="mail.svg" />
+              <div class="info">
+                <h6>Email</h6>
+                <p>
+                  <a href="mailto:sales@hydroforcebs.com"
+                    >sales@hydroforcebs.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
         </footer>
         <div id="Contact"></div>
         <div class="copy">
-            © Hydroforce Business Solutions 2024 | All Rights Reserved.
+          © Hydroforce Business Solutions 2024 | All Rights Reserved.
         </div>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
